@@ -1,0 +1,94 @@
+body {
+  background: url("http://msutoday.msu.edu/_/img/assets/2014/space.jpg");
+}
+
+.earth {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 250px;
+  height: 250px;
+  margin: 3em auto;
+  background: url("http://users.evtek.fi/~sampsara/3D/Earth-Color4096.jpg") 0 0 repeat;
+  border-radius: 50%;
+  background-size: 630px;
+  animation: rotate 4s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+  color: #000;
+}
+
+#earth:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+}
+
+#earth:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+@keyframes rotate {
+  0% {background-position: 0 0;}
+  100% {background-position: 630px 0;}
+}
+
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+#animate-area	{ 
+	width: 560px; 
+	height: 400px; 
+	background-image: url("https://i.ytimg.com/vi/ypPO4wBe1n0/maxresdefault.jpg");
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	animation: animatedBackground 40s linear infinite;
+}
+
+.moon {
+  height: 50px;
+  width: 50px;
+  background: none;
+  animation: spin 20s linear infinite;
+  transform-origin: 25px;
+}
+
+.moon img {
+  height: 50px;
+  transform: translateX(-160px) translateY(-160px);
+  width: 50px;
+}
+
+@keyframes spin {
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+.moon-container {
+  position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
+.earth, .moon img {
+  border-radius: 50%;
+  box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+}
